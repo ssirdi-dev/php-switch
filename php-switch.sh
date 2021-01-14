@@ -228,7 +228,7 @@ php-switch-to () {
 
     local php_ver=${args[1]}
 
-    if [[ $@ ]]; then
+    if [[ $php_ver ]]; then
 
         if [[ ! -f "/usr/bin/php${php_ver}" ]]; then
             msg_error "PHP ${php_ver} Not installed \n ${NC}"
