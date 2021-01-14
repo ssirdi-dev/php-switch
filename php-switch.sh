@@ -5,7 +5,7 @@ _php_versions=(
 )
 
 _php_exts=(
-    'bcmath' 'bz2' 'cli' 'common' 'curl' 'dba' 'fpm' 'gd' 'imap'
+    'bcmath' 'bz2' 'cli' 'common' 'curl' 'dba' 'gd' 'imap'
     'interbase' 'intl' 'json' 'ldap' 'mbstring'
     'mcrypt'
     'mysql' 'opcache' 'pgsql'
