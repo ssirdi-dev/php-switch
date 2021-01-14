@@ -142,7 +142,7 @@ php-switch-uninstall () {
     local php_ver=${args[1]}
 
     case ${php_ver} in
-        5.6|7.0|7.1|7.2)
+        7.1|7.2|7.4|8.0)
             msg_info "Uninstalling PHP " ${php_ver} "\n"
             echo ""
 
@@ -171,7 +171,7 @@ php-switch-install () {
     local pkgs
 
     case ${php_ver} in
-        5.6|7.0|7.1|7.2)
+        7.1|7.2|7.4|8.0)
             msg_info "Installing PHP " ${php_ver}
             echo ""
 
