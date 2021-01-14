@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _php_versions=(
-    '5.6' '7.0' '7.1' '7.2'
+    '7.1' '7.2' '7.4' '8.0'
 )
 
 _php_exts=(
@@ -86,11 +86,11 @@ php-switch-add-repo () {
 
 php-switch-repo-pkg () {
 
-    local repo='/var/lib/apt/lists/ppa.launchpad.net_ondrej_php_ubuntu_dists_xenial_main_binary-i386_Packages'
+    local repo='/var/lib/apt/lists/ppa.launchpad.net_ondrej_php_ubuntu_dists_focal_main_binary-amd64_Packages'
     local php_ver=${args[1]}
 
     case ${php_ver} in
-        5.6|7.0|7.1|7.2)
+        7.1|7.2|7.4|8.0)
             msg_info "Available Packages for ${php_ver}: \n"
 
             grep "Package: php${php_ver}-" "${repo}" | sed -n "s/Package:/  /p"
