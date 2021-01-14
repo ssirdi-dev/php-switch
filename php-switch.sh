@@ -261,25 +261,25 @@ php-switch-to () {
             msg_info "Apache Missing : Skip \n"
         fi
 
-        if [[ $(sudo service --status-all | grep "php") ]]; then
-            echo ""
-            msg_info "Disabling PHP-FPM Services ..."
+        # if [[ $(sudo service --status-all | grep "php") ]]; then
+        #     echo ""
+        #     msg_info "Disabling PHP-FPM Services ..."
 
-            for i in ${_php_versions[*]}; do
-                if [[ -f "/usr/bin/php${i}" ]]; then
-                    msg_info "Disabling PHP FPM php${i}"
-                    # sudo service php${i}-fpm stop
-                    sudo systemctl stop php${i}-fpm.service --no-pager
-                    sudo systemctl disable php${i}-fpm.service --no-pager
-                fi
-            done
+        #     for i in ${_php_versions[*]}; do
+        #         if [[ -f "/usr/bin/php${i}" ]]; then
+        #             msg_info "Disabling PHP FPM php${i}"
+        #             # sudo service php${i}-fpm stop
+        #             sudo systemctl stop php${i}-fpm.service --no-pager
+        #             sudo systemctl disable php${i}-fpm.service --no-pager
+        #         fi
+        #     done
 
-            echo ""
-            msg_info "Enabling  PHP FPM ${php_ver} ..."
-            # sudo service php${php_ver}-fpm start
-            sudo systemctl enable php${i}-fpm.service --no-pager
-            sudo systemctl start php${i}-fpm.service --no-pager
-        fi
+        #     echo ""
+        #     msg_info "Enabling  PHP FPM ${php_ver} ..."
+        #     # sudo service php${php_ver}-fpm start
+        #     sudo systemctl enable php${i}-fpm.service --no-pager
+        #     sudo systemctl start php${i}-fpm.service --no-pager
+        # fi
 
         msg_info "Updating PHP Cli ..."
         sudo update-alternatives --set php "/usr/bin/php${php_ver}" > /dev/null
